@@ -1,4 +1,3 @@
-using StayMate.Application;
 using StayMate.Infrastructure;
 using StayMate.Persistence;
 
