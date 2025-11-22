@@ -1,7 +1,7 @@
-// using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using StayMate.Persistence.Contexts;
+using StayMate.Persistence.Context;
 
 namespace StayMate.Persistence
 {
@@ -11,7 +11,7 @@ namespace StayMate.Persistence
         {
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            // services.AddDbContext<StayMateDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<StayMateDbContext>(options => options.UseSqlServer(connectionString));
 
             return services;
         }
