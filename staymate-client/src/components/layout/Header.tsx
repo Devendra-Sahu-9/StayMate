@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Container from "./Container";
 import Button from "../ui/Button";
 
@@ -6,17 +7,33 @@ export default function Header() {
     <header className="bg-white border-b sticky top-0 z-50">
       <Container>
         <div className="h-16 flex justify-between items-center">
-          <h1 className="text-xl font-semibold text-primary">StayMate</h1>
+          {/* Logo */}
+          <h1 className="text-xl font-semibold text-primary">
+            <Link to="/">StayMate</Link>
+          </h1>
 
+          {/* Navigation */}
           <nav className="hidden md:flex gap-6 text-sm text-gray-600">
-            <span>Home</span>
-            <span>Features</span>
-            <span>How it Works</span>
+            <Link to="/" className="hover:text-primary">
+              Home
+            </Link>
+            <Link to="/features" className="hover:text-primary">
+              Features
+            </Link>
+            <Link to="/how-it-works" className="hover:text-primary">
+              How it Works
+            </Link>
           </nav>
 
+          {/* Actions */}
           <div className="flex gap-3">
-            <Button variant="secondary">Login</Button>
-            <Button>Sign Up</Button>
+            <Button asChild variant="secondary">
+              <Link to="/login">Login</Link>
+            </Button>
+
+            <Button asChild>
+              <Link to="/signup">Sign Up</Link>
+            </Button>
           </div>
         </div>
       </Container>

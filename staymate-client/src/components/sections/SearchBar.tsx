@@ -1,6 +1,6 @@
 import Container from "../layout/Container";
 import Button from "../ui/Button";
-import Select from "../ui/select";
+import Select from "../ui/Select";
 import { LOCATIONS, STAY_TYPES, DURATIONS } from "../../app/constants";
 
 export default function SearchBar() {
