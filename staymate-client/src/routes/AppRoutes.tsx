@@ -1,16 +1,22 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import Signup from "../pages/Signup";
 import OnboardingPage from "../features/onboarding/OnboardingPage";
+import OnboardingLayout from "../layout/OnboardingLayout";
+import PublicLayout from "../layout/PublicLayout";
 
-const AppRoutes = () => {
+export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/onboarding" element={<OnboardingPage />} />
+      {/* Public pages */}
+      <Route element={<PublicLayout />}>
+        <Route path="/" element={<Home />} />
+        {/* login, signup later */}
+      </Route>
+
+      {/* Onboarding */}
+      <Route element={<OnboardingLayout />}>
+        <Route path="/onboarding" element={<OnboardingPage />} />
+      </Route>
     </Routes>
   );
-};
-
-export default AppRoutes;
+}

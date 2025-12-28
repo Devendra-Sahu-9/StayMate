@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Container from "./Container";
 import Button from "../ui/Button";
 
-export default function Header() {
+export default function Header({ showAuthAction = true }) {
   return (
     <header className="bg-white border-b sticky top-0 z-50">
       <Container>
@@ -26,15 +26,16 @@ export default function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex gap-3">
-            <Button asChild variant="secondary">
-              <Link to="/login">Login</Link>
-            </Button>
-
-            <Button asChild>
-              <Link to="/signup">Sign Up</Link>
-            </Button>
-          </div>
+          {showAuthAction && (
+            <div className="flex gap-3">
+              <Button variant="secondary">
+                <Link to="/login">Login</Link>
+              </Button>
+              <Button>
+                <Link to="/signup">Sign Up</Link>
+              </Button>
+            </div>
+          )}
         </div>
       </Container>
     </header>

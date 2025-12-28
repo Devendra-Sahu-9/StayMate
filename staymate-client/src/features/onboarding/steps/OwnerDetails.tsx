@@ -11,7 +11,7 @@ export default function OwnerDetails() {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Input label="Full Name" />
-        <Input label="Phone Number" />
+        <Input label="Phone Number" type="number" />
         <Input label="Email Address" />
         <Select
           label="Verification Type"
@@ -20,6 +20,22 @@ export default function OwnerDetails() {
             { label: "Company / Trust", value: "company" },
           ]}
         />
+        <div>
+          <h4 className="font-medium mb-4">Address Details</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
+            <Input label="Street" />
+            <Input label="ZIP Code" />
+            <Select
+              label="City"
+              options={[
+                { label: "New York", value: "new_york" },
+                { label: "Los Angeles", value: "los_angeles" },
+                { label: "Chicago", value: "chicago" },
+              ]}
+            />
+            <Select label="State" options={[{ label: "Cg", value: "Mp" }]} />
+          </div>
+        </div>
       </div>
 
       <div className="mt-6">
